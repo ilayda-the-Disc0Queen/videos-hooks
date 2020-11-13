@@ -23,9 +23,14 @@ const App = () => {
     setSelectedVideo(response.data.items[0]);
   };
 
-  const onVideoSelect = (video) => {
-    setSelectedVideo(video);
-  };
+  // provided inline on like 41
+  // const onVideoSelect = (video) => {
+  //   setSelectedVideo(video);
+  // };
+  // YOU COULD ALSO JUST HAVE THE FOLLOWING
+  // onVideoSelect={setSelectedVideo}
+  // because you're taking one object and literally just
+  // passing it on
 
   return (
     <div className="ui container">
@@ -36,7 +41,9 @@ const App = () => {
             <VideoDetail video={selectedVideo} />
           </div>
           <div className="five wide column">
-            <VideoList onVideoSelect={onVideoSelect} videos={videos} />
+            <VideoList
+            onVideoSelect={(video) => setSelectedVideo(video)}
+            videos={videos} />
           </div>
         </div>
       </div>
