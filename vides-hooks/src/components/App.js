@@ -3,6 +3,8 @@ import SearchBar from './SearchBar';
 import youtube from '../apis/youtube';
 import VideoList from './VideoList';
 import VideoDetail from './VideoDetail';
+console.log(process.env.REACT_APP_API_KEY);
+
 
 const App = () => {
   const [videos, setVideos] = useState([]);
